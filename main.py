@@ -46,6 +46,20 @@ Speak("Open Youtube, Open Facebook or Open Download etc")
 Speak("I can send an email, I can search on web.")
 Speak("If you want to know more you can always use command 'help'")
 Speak("quit or exit for exit")
+print("Commands must be like")
+print("Open youtube ")
+print("Search food ")
+print("what is food? ")
+print("Who is Sachin tenduulkar?")
+print("Open downloads")
+print("open music")
+print("send Email")
+print("remenber my name is ....")
+print("what is my name?")
+print("what is my phone number?")
+print("what text - for asking what you said to remeber about text")
+
+print("quit or exit for exit")
 
 #input the audio and recoginize text and return to function
 def input():
