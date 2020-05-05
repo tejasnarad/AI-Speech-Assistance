@@ -1,6 +1,6 @@
 import pymysql as abc
 #need to change sql root and password for your pc
-db=abc.Connect(host="localhost",user="root" ,password="narad" ,database = "PROJECTAI_SPEECH" )
+db=abc.Connect(host="localhost",user="root" ,password="Password" ,database = "PROJECTAI_SPEECH" )
 cursor=db.cursor()
 
 #stroe in database
