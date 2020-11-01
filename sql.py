@@ -1,9 +1,13 @@
 import pymysql as abc
 #need to change sql root and password for your pc
-db=abc.Connect(host="localhost",user="root" ,password="Password" ,database = "PROJECTAI_SPEECH" )
-cursor=db.cursor()
+#need to create data base PROJECT_SPEECH
 
-#stroe in database
+db=abc.Connect(host="localhost",user="root" ,password="" )
+
+cursor=db.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS PROJECTAI_SPEECH")
+cursor.execute("USE PROJECTAI_SPEECH")
+#store in database
 def store(request):
     
     try:

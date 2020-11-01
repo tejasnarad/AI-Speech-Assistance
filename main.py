@@ -97,7 +97,7 @@ while response != "quit" :
         request=input()
         c=oo.commands(request)
         response=c.command()
-        time.sleep(0.5)
+        time.sleep(0.8)
 
 print("exit")
 
