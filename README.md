@@ -24,5 +24,4 @@ pymysql.
 
 you microphone must be in working and need a stable internet connection
 
-
 to start database you need to specify the host user password in the sql file
