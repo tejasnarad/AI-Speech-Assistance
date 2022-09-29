@@ -238,10 +238,8 @@ class commands:
             commands.google_search(self.xyz,self.xyz)
         elif "which" in self.xyz or "get" in self.xyz:
         	if "user" in self.xyz :
-        		print(os.login())
-        		Speak(os.login())
-			
-        elif "quit"  in self.xyz or "exit" in self.xyz : #quit
+        		print(os.login());Speak(os.login())
+	    elif "quit"  in self.xyz or "exit" in self.xyz : #quit
             Speak("quiting the application ")
             return "quit"
 
