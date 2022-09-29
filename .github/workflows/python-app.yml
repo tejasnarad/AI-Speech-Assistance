@@ -13,8 +13,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  build: 
+    name: Prequsites
     runs-on: ubuntu-latest
 
     steps:
@@ -26,14 +26,23 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
+    - name: Test if file is running
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        python3
+        python3 main.py
+  deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      steps:
+        - name: ServiceNow Change
+          uses: ServiceNow/servicenow-devops-change@v1.34.2
+          with:
+            devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+            devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+            instance-url: ${{ secrets.SN_INSTANCE_URL }}
+            tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+            context-github: ${{ toJSON(github) }}
+            job-name: 'Deploy'
+            change-request: '{"setCloseCode":"true","attributes":{"short_description":"Automated Software Deployment","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}}'
+            interval: '100'
+            timeout: '3600'
