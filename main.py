@@ -103,8 +103,11 @@ print("exit")
 
 if 1==1:
 	print(2)
+if 2==2:
+	print(2)
 else:
 	print(2)
+
 
 
 
