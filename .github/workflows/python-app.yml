@@ -29,7 +29,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test if file is running
       run: |
-        python3 main.py
+        python3 command.py
   deploy:
       name: Deploy
       runs-on: ubuntu-latest
