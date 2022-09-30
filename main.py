@@ -8,7 +8,7 @@ import os
 
 import command as oo
 
-#comment added in main file
+
 
 #initialization of sapi
 engine=pyttsx3.init('sapi5')
