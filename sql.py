@@ -16,10 +16,6 @@ def store(request):
             sql="INSERT INTO info (text_info) VALUES (%s)"
             cursor.execute(sql,request)
         
-        if "phone" in request:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
-        
         else:
             sql="INSERT INTO info (text_info) VALUES (%s)"
             cursor.execute(sql,request)
@@ -30,12 +26,7 @@ def store(request):
 
         if "name" in request:
             sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
-
-        if "phone" in request:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
-        
+            cursor.execute(sql,request)       
         else:
             sql="INSERT INTO info (text_info) VALUES (%s)"
             cursor.execute(sql,request)
