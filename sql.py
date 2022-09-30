@@ -12,24 +12,16 @@ def store(request):
     
     try:
         cursor.execute("create table info(id int(2) NOT NULL AUTO_INCREMENT PRIMARY KEY,text_info text(100))");
-        if "name" in request:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
-        
-        else:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
+        sql="INSERT INTO info (text_info) VALUES (%s)"
+        cursor.execute(sql,request)
 
         db.commit()
     except abc.InternalError:
     
 
-        if "name" in request:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)       
-        else:
-            sql="INSERT INTO info (text_info) VALUES (%s)"
-            cursor.execute(sql,request)
+        sql="INSERT INTO info (text_info) VALUES (%s)"
+        cursor.execute(sql,request)       
+        
 
         db.commit()
 
