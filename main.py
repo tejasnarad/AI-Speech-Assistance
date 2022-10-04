@@ -6,7 +6,7 @@ import webbrowser
 import wikipedia
 import os
 
-#import command as oo
+import command as oo
 
 
 
@@ -87,7 +87,7 @@ request=input()
 
 #creating object of oopscommands class  and initalizing the command string to
 #class commands
-# c=oo.commands(request)
+c=oo.commands(request)
 response=c.command() #running the command for the void command by object calling to function
 
 
@@ -95,7 +95,7 @@ response=c.command() #running the command for the void command by object calling
 #for continous working of voice take input and working on commands untill user says quit
 while response != "quit" :
         request=input()
-        # c=oo.commands(request)
+        c=oo.commands(request)
         response=c.command()
         time.sleep(0.8)
 
