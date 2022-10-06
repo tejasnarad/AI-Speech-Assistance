@@ -24,4 +24,3 @@ steps:
   inputs:
     scriptSource: 'inline'
     script: 'print("hello")'
-    pythonInterpreter: '3.6'
