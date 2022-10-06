@@ -11,9 +11,17 @@ pool:
 
 steps:
 - script: echo Hello, world!
+  name: 'python'
   displayName: 'Run a one-line script'
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+  
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: 'print("hello")'
+    pythonInterpreter: '3.6'
